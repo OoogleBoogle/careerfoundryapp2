@@ -9,7 +9,8 @@
 
 var slick = function() {
 	$('.slider').slick({
-		arrows: false
+		arrows: false,
+		fade: true
 	});
 };
 

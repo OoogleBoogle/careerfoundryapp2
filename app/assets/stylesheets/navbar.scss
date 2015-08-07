@@ -5,8 +5,17 @@ ul.right {
 	@media (min-width: 800px) {
 		margin-right: 3.6%;
 	}
+	a:before {
+		font-family: "FontAwesome";
+		content: "\f007";
+		margin:	0 7px;
+	}
 }
 #notice {
   margin: 0;
   line-height: 2.825rem;
+}
+.fi-torso {
+	color: white;
+    margin-top: 14px;
 }

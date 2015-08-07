@@ -18,6 +18,7 @@
         %li
           %p#notice= notice
         - if user_signed_in?
+          -# %li.fi-torso
           %li.has-dropdown
             = link_to "#{current_user.full_name}"
             %ul.dropdown
