@@ -13,9 +13,13 @@
         %li= link_to "Home", root_path
         %li= link_to 'Store', products_path
         %li= link_to "Contact", static_pages_contact_path
-        %li.has-dropdown
-          = link_to 'Search'
-          %ul.dropdown
+        %li.has-form
+          .row.collapse
+            .small-9.columns
+              = form_tag("/products", method: "get") do
+                -# = label_tag(:q, "Search for:")
+                = text_field_tag(:q)
+                -# = submit_tag("Search")
       / Right Nav Section
       %ul.right
         %li
