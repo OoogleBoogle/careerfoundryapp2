@@ -5,4 +5,13 @@
 		margin-top: 2%;
 		width: 50%;
 	}
+	input[type="submit"] {
+		padding: 1% 4%;
+    	border-radius: 12px;
+    	background-color: greenyellow;
+    	border: none;
+	}
+	legend {
+		background-color: transparent;
+	}
 }

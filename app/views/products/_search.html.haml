@@ -1,0 +1,9 @@
+.row
+	.large-6.columns#search-bar
+		.row.collapse.prefix-round
+			.small-3.columns
+				%a.button.prefix{:href => "#"}
+					%i.fi-magnifying-glass{"aria-hidden" => "true"} 
+			.small-9.columns
+				= form_tag("/products", method: "get", role: "search", type: "search") do
+					= text_field_tag(:q, nil, placeholder: "Search Products")

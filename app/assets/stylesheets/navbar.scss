@@ -2,7 +2,9 @@
 	z-index: 1000;
 }
 ul.right {
-	margin-right: 3.6%;
+	@media (min-width: 800px) {
+		margin-right: 3.6%;
+	}
 }
 #notice {
   margin: 0;

@@ -13,22 +13,12 @@
         %li= link_to "Home", root_path
         %li= link_to 'Store', products_path
         %li= link_to "Contact", static_pages_contact_path
-        %li.has-dropdown
-          = link_to "Search"
-          %ul.dropdown
-            %li.has-form
-              .row.collapse
-                .small-8.large-12.columns
-                  = form_tag("/products", method: "get", role: "search", type: "search") do
-                    = text_field_tag(:q, nil, placeholder: "U+1F50D;".html_safe)
-                    -# = submit_tag("Search")
       / Right Nav Section
       %ul.right
         %li
           %p#notice= notice
         - if user_signed_in?
           %li.has-dropdown
-            -# %i.fi-torso{"aria-hidden" => "true"}
             = link_to "#{current_user.full_name}"
             %ul.dropdown
               %li= link_to 'My Orders'

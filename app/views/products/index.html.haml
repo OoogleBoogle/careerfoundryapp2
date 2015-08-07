@@ -1,4 +1,5 @@
 .container
-  .grid
-    .grid-sizer
-    = render @products
+	= render(:partial => "search")
+	.grid
+		.grid-sizer
+			= render @products

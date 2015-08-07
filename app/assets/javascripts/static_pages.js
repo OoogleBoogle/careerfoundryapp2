@@ -13,4 +13,8 @@ var slick = function() {
 	});
 };
 
-$(document).on('page:change', slick)
+$(document).on('page:change', function() {
+	$('<img src="/images/logo_text.svg">').appendTo($('.caption-1'))
+	$("<h1>Visit the store.. prints... something</h1>").appendTo($('.caption-2'))
+	slick()	
+});
