@@ -1,3 +1,39 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#notice {
+  margin: 0;
+  line-height: 2.825rem;
+}
+.slick-slide {
+  position: relative;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  z-index: 200;
+  width: 50%;
+}
+.caption-2 {
+	@extend .caption;
+	left: initial;
+	right: 10%;
+	text-align: right;
+}
+.image-1 {
+	background-image: url(http://placehold.it/1920x1080/A92B48/fff);
+	height: 35vh;
+    background-size: cover;
+    @media (min-width: 480px) {
+    	height: 60vh;
+    }
+    @media (min-width: 800px) {
+    	height: 75vh;
+    }
+}
+.image-2 {
+	@extend .image-1;
+	background-image: url(http://placehold.it/1920x1080/EE964D/fff);
+}

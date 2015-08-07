@@ -1,0 +1,27 @@
+// Place all the styles related to the Products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.grid-sizer,
+.grid-item {
+	width: 20%;
+}
+.price {
+	position: absolute;
+	margin: 0;
+	bottom: 0;
+	text-align: center;
+	width: 100%;
+	color: white;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 100;
+}
+.show-img {
+	width: 50%;
+	margin: 0 1%;
+	padding: 0 1% 0 0;
+	float: left;
+	border-right: 1px solid gray;
+}
+.show-details {
+	margin: 2%;
+}
