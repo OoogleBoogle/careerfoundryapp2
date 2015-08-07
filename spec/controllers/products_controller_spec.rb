@@ -24,11 +24,13 @@ RSpec.describe ProductsController, type: :controller do
   # Product. As you add validations to Product, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    # skip("Add a hash of attributes valid for your model")
+    {title: "Title", description: "description", price: 1, image_url: "url.jpg"}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    # skip("Add a hash of attributes invalid for your model")
+    {title: nil, description: nil, price: nil, image_url: nil} 
   }
 
   # This should return the minimal set of values that should be in the session
@@ -103,14 +105,19 @@ RSpec.describe ProductsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        # skip("Add a hash of attributes valid for your model")
+        {title: "Title2", description: "description2", price: 2, image_url: "url2.jpg"}
       }
 
       it "updates the requested product" do
         product = Product.create! valid_attributes
         put :update, {:id => product.to_param, :product => new_attributes}, valid_session
         product.reload
-        skip("Add assertions for updated state")
+        # skip("Add assertions for updated state")
+        # expect(assigns(:product).attributes['title']).to match(new_attributes[:title])
+        new_attributes.each_pair do |key, value|
+          expect(product[key]).to eq(value)
+        end
       end
 
       it "assigns the requested product as @product" do

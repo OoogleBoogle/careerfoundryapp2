@@ -1,11 +1,10 @@
 class StaticPagesController < ApplicationController
-  def index
-  end
+	
+	def index
 
-  def contact
-  end
+	end
 
-  def thank_you
+	def thank_you
 		@name = params[:name]
 	end
 end

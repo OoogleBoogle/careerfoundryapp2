@@ -1,0 +1,5 @@
+.grid-item
+	= link_to image_tag("#{product.image_url}", class: "thumbs"), product
+	%p.price
+		= product.title
+		= "- $#{product.price}"
