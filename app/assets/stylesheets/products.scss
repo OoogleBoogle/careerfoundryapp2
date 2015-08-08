@@ -3,7 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .grid-sizer,
 .grid-item {
-	width: 20%;
+	width: 48%;
+	margin: 1%;
+	@media (min-width: 800px) {
+		width: 23%;
+	}
 }
 .price {
 	position: absolute;
@@ -31,6 +35,7 @@
 	padding-top: 2%;
 }
 .search-submit {
+	padding: 0;
 	background-color: yellowgreen;
     color: black;
     border-color: lightgray;
