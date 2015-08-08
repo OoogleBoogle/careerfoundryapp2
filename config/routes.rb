@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
   resources :products do
     resources :orders, only: :create
+    resources :comments
   end
   get 'static_pages/index'
 
