@@ -5,7 +5,7 @@ ul.right {
 	@media (min-width: 800px) {
 		margin-right: 3.6%;
 	}
-	a:before {
+	.has-dropdown > a:before {
 		font-family: "FontAwesome";
 		content: "\f007";
 		margin:	0 7px;

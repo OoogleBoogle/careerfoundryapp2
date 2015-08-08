@@ -1,22 +1,24 @@
-%h1 Listing orders
-
-%table
-  %thead
-    %tr
-      %th Product
-      %th User
-      %th
-      %th
-      %th
-
-  %tbody
-    - @orders.each do |order|
+%h1 Hi #{@user.first_name}
+- if @orders.empty?
+  %h3 You have no outstanding orders.
+- else
+  %table
+    %thead
       %tr
-        %td= order.product.title
-        %td= order.user.full_name
-        -# %td= link_to 'Show', user_order_path(user)
-        -# %td= link_to 'Edit', edit_user_order_path(current_user, order)
-        %td= link_to 'Destroy', user_order_path(current_user, order), :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %th Product
+        %th User
+        %th
+        %th
+        %th
+
+    %tbody
+      - @orders.each do |order|
+        %tr
+          %td= order.product.title
+          %td= order.user.full_name
+          -# %td= link_to 'Show', user_order_path(user)
+          -# %td= link_to 'Edit', edit_user_order_path(current_user, order)
+          %td= link_to 'Delete', user_order_path(current_user, order), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
