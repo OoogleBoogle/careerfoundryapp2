@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   # resources :orders, except: :index
   devise_for :users
   resources :users do
