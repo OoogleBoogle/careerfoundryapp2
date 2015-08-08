@@ -1,7 +1,7 @@
 - if signed_in?
 	%h4 Leave a review
 	= form_for([@product, @product.comments.build]) do |f|
-		= rating_for @product
+		= rating_for @product, nil, disable_after_rate: false
 		%p
 			= f.label :body, "Comments"
 			%br

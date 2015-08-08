@@ -3,12 +3,20 @@ class CommentsController < ApplicationController
 		@product = Product.find(params[:product_id])
 		@comment = @product.comments.new(comment_params)
 		@comment.user = current_user
-		@comment.save
-		redirect_to product_path(@product)
+		respond_to do |format|
+			if @comment.save
+				format.html { redirect_to @product, notice: 'Thanks for your review' }
+			else
+				format.html {redirect_to @product, notice: 'Your review could not be saved'}
+			end
+		end
 	end
 
 	def destroy
-
+		@comment = Comment.find(params[:id])
+		product = @comment.product
+		@comment.destroy
+		redirect_to product
 	end
 
 	private
