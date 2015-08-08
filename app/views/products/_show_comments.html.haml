@@ -2,9 +2,9 @@
 	.row
 		%hr
 		%p
+			= rating_for_user @product, comment.user
 			= comment.user.full_name
 			%br
 			%small
 				%em= "#{time_ago_in_words(comment.created_at)} ago"
 		%p= comment.body
-		%p= "Rated: #{comment.rating}/5"
