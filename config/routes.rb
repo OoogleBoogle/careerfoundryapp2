@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :orders
+  # resources :orders, except: :index
   devise_for :users
+  resources :users do
+    resources :orders
+  end
   resources :products
   get 'static_pages/index'
 

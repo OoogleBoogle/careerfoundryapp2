@@ -1,10 +1,11 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @user = current_user
+    @orders = @user.orders
   end
 
   # GET /orders/1
@@ -56,7 +57,7 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
+      format.html { redirect_to user_orders_path(current_user), notice: 'Order was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
