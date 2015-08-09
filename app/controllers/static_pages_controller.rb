@@ -6,5 +6,9 @@ class StaticPagesController < ApplicationController
 
 	def thank_you
 		@name = params[:name]
+		@email = params[:email]
+		@body = params[:body]
+		UserMailer.contact_mail(current_user).deliver_later
+		UserMailer.contact_message(@name, @email, @body).deliver_later
 	end
 end
