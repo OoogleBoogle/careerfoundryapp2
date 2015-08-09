@@ -13,14 +13,28 @@ RSpec.describe StaticPagesController, type: :controller do
 		end
 	end
 	describe 'GET /contact' do
-		it 'returns success' do
-			get :contact
-			expect(response).to have_http_status(200)
+		context 'as anon user' do
+			before :each do 
+				login_with nil
+			end
+			it 'redirects to sign in' do
+				get :contact
+				expect(response).to redirect_to(new_user_session_path)
+			end
 		end
 
-		it 'renders template' do
-			get :contact
-			expect(response).to render_template('contact')
+		context 'as user' do
+			before :each do
+				login_with create(:user)
+			end
+			it 'returns success' do
+				get :contact
+				expect(response).to have_http_status(200)
+			end
+			it 'renders template' do
+				get :contact
+				expect(response).to render_template('contact')
+			end
 		end
 	end
 end

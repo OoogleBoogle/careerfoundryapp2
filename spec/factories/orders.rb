@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :order do
-    product nil
-user nil
+    product 1
+		user 1
   end
 
 end
