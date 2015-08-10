@@ -2,7 +2,7 @@
 	.row
 		%hr
 		%p
-			= rating_for_user @product, comment.user
+			= rating_for_user @product, comment.user, nil, star_path: '/raty_images'
 			= comment.user.full_name
 			%br
 			%small
