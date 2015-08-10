@@ -3,24 +3,12 @@
 - if @orders.empty?
   %h3 You have no outstanding orders.
 - else
-  %table
-    %thead
-      %tr
-        %th Product
-        %th User
-        %th
-        %th
-        %th
-
-    %tbody
-      - @orders.each do |order|
-        %tr
-          %td= order.product.title
-          %td= order.user.full_name
-          -# %td= link_to 'Show', user_order_path(user)
-          -# %td= link_to 'Edit', edit_user_order_path(current_user, order)
-          %td= link_to 'Delete', user_order_path(current_user, order), :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
--# = link_to 'New Order', new_user_order_path(current_user)
+  %h4 Here's your current outstanding orders
+  %p You currently have #{@orders.length} products
+  .row.order-row
+    - @orders.each do |order|
+      .order-item.small-6.medium-3.columns
+        = image_tag(order.product.image_url)
+        %h4= order.product.title
+        %p.order-price= "$#{order.product.price}"
+        %p= link_to "Remove", user_order_path(order.user_id, order), method: :delete

@@ -24,6 +24,15 @@
 #  * zeus: 'zeus rspec' (requires the server to be started separately)
 #  * 'just' rspec: 'rspec'
 
+guard 'livereload' do
+  watch(%r{app/views/.+\.(erb|haml|slim)$})
+  watch(%r{app/helpers/.+\.rb})
+  watch(%r{public/.+\.(css|js|html)})
+  watch(%r{config/locales/.+\.yml})
+  # Rails Assets Pipeline
+  watch(%r{(app|vendor)(/assets/\w+/(.+\.(scss|css|js|html|png|jpg))).*}) { |m| "/assets/#{m[3]}" }
+end
+
 guard :rspec, cmd: "bundle exec rspec" do
   require "guard/rspec/dsl"
   dsl = Guard::RSpec::Dsl.new(self)
@@ -79,3 +88,5 @@ guard :spork, :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAILS
   watch('test/test_helper.rb') { :test_unit }
   watch(%r{features/support/}) { :cucumber }
 end
+
+
