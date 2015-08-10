@@ -22,4 +22,7 @@ ul.right {
 .name {
 	width: 100px;
 	margin-left: 10px!important;
+	&:hover {
+		background-color: white;
+	}
 }
