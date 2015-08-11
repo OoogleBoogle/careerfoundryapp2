@@ -5,7 +5,7 @@
     %h4= @product.title
     %p= @product.description
     %p= "$#{@product.price}"
-    = form_tag '/payments/create' do
+    = form_tag '/charges/create' do
       = render(:partial => "shared/stripe_checkout_button")
     = link_to "Add to Order", product_orders_path(@product), method: :post
     %br

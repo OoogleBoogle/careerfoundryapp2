@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :orders, only: :create
     resources :comments
   end
+  resources :charges
   get 'static_pages/index'
   get 'static_pages/contact'
   post 'static_pages/thank_you'
