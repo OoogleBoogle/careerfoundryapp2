@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
   def index
     @user = current_user
     @orders = @user.orders
+    @total = @orders.sum(:price)
   end
 
   # GET /orders/1

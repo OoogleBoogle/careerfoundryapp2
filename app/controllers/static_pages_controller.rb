@@ -11,4 +11,8 @@ class StaticPagesController < ApplicationController
 		UserMailer.contact_mail(current_user).deliver_later
 		UserMailer.contact_message(@name, @email, @body).deliver_later
 	end
+
+	def payment_recieved
+
+	end
 end
