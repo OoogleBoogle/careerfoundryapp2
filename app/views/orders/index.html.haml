@@ -4,9 +4,9 @@
   %h3 You have no outstanding orders.
 - else
   %h4 Here's your current outstanding orders
-  %p You currently have #{@orders.length} oustanding purchase#{"s" if @orders.length > 1}
-  %p= 
-
+  %p 
+    You currently have #{@orders.length} oustanding purchase#{"s" if @orders.length > 1} which totals
+    = number_to_currency(@orders.sum(:price) / 100)
 
 
   .row.order-row

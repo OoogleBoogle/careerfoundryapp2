@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
   def create
     @product = Product.find(params[:product_id])
     @user = current_user
-    @order = Order.new(product_id: @product.id, user_id: @user.id)
+    @order = Order.new(product_id: @product.id, user_id: @user.id, price: @product.price)
 
     respond_to do |format|
       if @order.save
@@ -72,6 +72,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:product_id, :user_id)
+      params.require(:order).permit(:product_id, :user_id, :price)
     end
 end
