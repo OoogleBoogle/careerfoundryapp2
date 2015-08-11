@@ -13,6 +13,15 @@ class User < ActiveRecord::Base
   	[self.first_name, self.last_name].join(" ")
   end
 
+  def total_cost
+    # o = self.orders
+    # # orders.sum(:product_id)
+    # o.each do |order|
+    #   order.product.price
+    #   # p = Product.find(order.product_id)
+    # end
+  end
+
   private
     def send_welcome_email
       UserMailer.welcome_email(self).deliver_later

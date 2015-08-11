@@ -4,7 +4,7 @@
   .show-details.small-6.columns
     %h4= @product.title
     %p= @product.description
-    %p= "$#{@product.price}"
+    %p= "#{number_to_currency(@product.price / 100)}"
     = form_tag '/charges/create' do
       = render(:partial => "shared/stripe_checkout_button")
     = link_to "Add to Order", product_orders_path(@product), method: :post

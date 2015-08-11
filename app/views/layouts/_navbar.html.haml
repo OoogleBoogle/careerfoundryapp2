@@ -19,8 +19,8 @@
         - if user_signed_in?
           %li.cart
             = link_to '', user_orders_path(current_user)
-            .order-i
-              - if current_user.orders.length > 0
+            - if current_user.orders.length > 0
+              .order-i
                 %p= current_user.orders.length
           %li.has-dropdown
             = link_to "#{current_user.full_name}"
