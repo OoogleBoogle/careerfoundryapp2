@@ -1,0 +1,11 @@
+%h1 Thanks Y'all!
+%h5 Here's what you ordered. You should receive an email confirming this shortly.
+- if @products.empty?
+	%p Sorry, there was a problem showing you a review of your order. But it has been processed. Feel free to send us a message on our #{link_to('contact page', static_pages_contact_path)} if you need help.
+- else
+	.row.order-row
+		- @products.each do |product|
+			.order-item.small-6.medium-3.columns
+				= image_tag(product.image_url)
+				%h4= product.title
+				%p= number_to_currency(product.price / 100)

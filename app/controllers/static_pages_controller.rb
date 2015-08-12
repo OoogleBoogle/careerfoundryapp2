@@ -12,7 +12,12 @@ class StaticPagesController < ApplicationController
 		UserMailer.contact_message(@name, @email, @body).deliver_later
 	end
 
-	def payment_recieved
-
+	def payment_received
+		@orders = current_user.orders
+		@products = @orders.map do |order|
+			Product.find(order.product_id)
+		end
+		UserMailer.purchase_mail(@products, current_user).deliver_later
+		@orders.destroy_all
 	end
 end
