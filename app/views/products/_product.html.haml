@@ -1,5 +1,6 @@
 .grid-item
 	= link_to image_tag("#{product.image_url}", class: "thumbs"), product
 	%p.price
+		= number_to_currency(product.price / 100)
+	%p.title
 		= product.title
-		= "- #{number_to_currency(product.price / 100)}"

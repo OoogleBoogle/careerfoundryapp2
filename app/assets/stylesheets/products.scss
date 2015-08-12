@@ -12,12 +12,27 @@
 .price {
 	position: absolute;
 	margin: 0;
-	bottom: 0;
+	top: 0;
 	text-align: center;
-	width: 100%;
-	color: white;
-	background-color: rgba(0,0,0,0.5);
+	width: 23%;
+	color: black;
+	background-color: white;
 	z-index: 100;
+	border-radius: 0 0 29px 0;
+	font: {
+		size: 0.6em;
+		weight: bold;
+	}
+	@media (min-width: 600px) {
+		font-size: 1em;
+	}
+	line-height: 1.8em;
+}
+.title {
+	@extend .price;
+	right: 0;
+	width: 40%;
+	border-radius: 0 0 0 29px;
 }
 .show-img {
 
