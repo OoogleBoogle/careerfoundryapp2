@@ -2,7 +2,7 @@ class UserMailer < ApplicationMailer
 	def contact_mail(user)
 		@user = user
 		attachments.inline['logo_text.svg'] = File.read('public/images/logo_text.svg')
-		mail(to: @user.email, subject: 'Thanks for you message!')
+		mail(to: @user.email, subject: 'Thanks for your message!')
 	end
 
 	def contact_message(name, email, body)
