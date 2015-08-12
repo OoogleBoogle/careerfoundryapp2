@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   def index
     if params[:q]
       search_term = params[:q]
-      @products = Product.where("title LIKE ? OR description LIKE ?", "%#{search_term}%", "%#{search_term}%")
+      @products = Product.where("title ILIKE ? OR description ILIKE ?", "%#{search_term}%", "%#{search_term}%")
     else
       @products = Product.all
     end
