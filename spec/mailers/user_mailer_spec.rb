@@ -54,7 +54,7 @@ RSpec.describe UserMailer, type: :mailer do
   			expect(@sent_mail.subject).to eq('You have a new message!')
   			expect(@sent_mail.to).to eq(['simbobattfield@hotmail.com'])
   			expect(@sent_mail).to have_content('This is the message body')
-  			expect(@sent_mail).to have_content('New Message From first last person6@example.com')
+  			expect(@sent_mail).to have_content('New Message From first last')
   		end
   	end
   end
