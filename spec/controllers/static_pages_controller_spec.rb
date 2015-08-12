@@ -25,7 +25,7 @@ RSpec.describe StaticPagesController, type: :controller do
 
 		context 'as user' do
 			before :each do
-				login_with create(:user)
+				login_with build(:user)
 			end
 			it 'returns success' do
 				get :contact
