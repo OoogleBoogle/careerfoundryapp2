@@ -1,3 +1,6 @@
+.top-bar {
+	background-color: cornflowerblue;
+}
 .sticky {
 	z-index: 1000;
 }
@@ -9,6 +12,16 @@ ul.right {
 		font-family: "FontAwesome";
 		content: "\f007";
 		margin:	0 7px;
+	}
+	a {
+		background-color: cornflowerblue;
+	}
+}
+.top-bar-section li:not(.has-form) a:not(.button) {
+	background-color: #6495ED;
+	transition: 500ms;
+	&:hover {
+		background-color: darken(#6495ED, 5%);
 	}
 }
 #notice {
@@ -22,8 +35,9 @@ ul.right {
 .name {
 	width: 100px;
 	margin-left: 10px!important;
+	transition: 500ms;
 	&:hover {
-		background-color: white;
+		background-color: darken(#6495ED, 5%);
 	}
 }
 .cart {

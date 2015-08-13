@@ -1,23 +1,26 @@
-%table#bodyTable{:border => "0", :cellpadding => "0", :cellspacing => "0", :height => "100%", :width => "100%"}
+%table{:border => "1", :cellpadding => "0", :cellspacing => "0", :width => "600"}
   %tr
     %td{:align => "center", :valign => "top"}
-      %table#emailContainer{:border => "0", :cellpadding => "20", :cellspacing => "0", :width => "600"}
+      %table{:border => "0", :cellpadding => "5", :cellspacing => "0"}
         %tr
           %td{:align => "center", :valign => "top"}
-            %table#emailHeader{:border => "0", :cellpadding => "20", :cellspacing => "0", :width => "100%"}
+            %table{:border => "0", :cellpadding => "5", :cellspacing => "0"}
               %tr
-                %td{:align => "center", :valign => "top"}
-                  = image_tag attachments['logo_text.svg'].url, width: "100px"
+                %td{:align => "center", :valign => "top", bgcolor: '#6495ED', width: '599'}
+                  -# = image_tag attachments['Logo_transparent.png'].url, width: "150"
+                  = image_tag 'Logo_transparent.png', width: '150'
         %tr
-          %td{:align => "center", :valign => "top"}
-            %table#emailBody{:border => "0", :cellpadding => "20", :cellspacing => "0", :width => "100%"}
+          %td{:align => "center", :valign => "top", width: '599'}
+            %table{:border => "0", :cellpadding => "5", :cellspacing => "0"}
               %tr
-                %td{:align => "center", :valign => "top"}
-                  %h1 "Hay #{@user.first_name}!"
-                  %p "Thanks for reaching out. We'll get back to you asap"
+                %td
+                  %h1 Hay #{@user.first_name}!
+              %tr
+                %td{align: 'left'}
+                  %p Thanks for reaching out. We'll get back to you asap
         %tr
-          %td{:align => "center", :valign => "top"}
-            %table#emailFooter{:border => "0", :cellpadding => "20", :cellspacing => "0", :width => "100%"}
+          %td{:align => "center", :valign => "top", width: '600', bgcolor: '#C1C0C0'}
+            %table{:border => "0", :cellpadding => "5", :cellspacing => "0"}
               %tr
                 %td{:align => "center", :valign => "top"}
                   %p &copy; Kevin Attfield Photography

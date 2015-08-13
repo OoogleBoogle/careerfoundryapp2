@@ -1,12 +1,14 @@
 - provide(:title, "Contact Us! | ")
 .form-container
-	%h1 Contact Us
-	%h5 Any questions? Send us a message!
-	= form_tag('thank_you') do
-		= label_tag(:name, "Name")
-		= text_field_tag(:name, current_user.full_name)
-		= label_tag(:email, "Email")
-		= email_field_tag(:email, current_user.email)
-		= label_tag(:body, "Message")
-		= text_area_tag(:body, nil, placeholder: "Leave you message here...")
-		= submit_tag("Submit")
+	%fieldset
+		%legend
+			%h1 Contact Us
+		%h5 Any questions? Send us a message!
+		= form_tag('thank_you') do
+			= label_tag(:name, "Name")
+			= text_field_tag(:name, current_user.full_name)
+			= label_tag(:email, "Email")
+			= email_field_tag(:email, current_user.email)
+			= label_tag(:body, "Message")
+			= text_area_tag(:body, nil, placeholder: "Leave you message here...")
+			= submit_tag("Submit")

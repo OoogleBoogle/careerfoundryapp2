@@ -18,7 +18,7 @@ class UserMailerPreview < ActionMailer::Preview
 	end
 
 	def purchase_mail
-		product = Product.limit(10)
+		product = Product.limit(3)
 		user = User.first
 		UserMailer.purchase_mail(product, user)
 	end

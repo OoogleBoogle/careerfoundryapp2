@@ -1,33 +1,18 @@
-%table#bodyTable{:border => "0", :cellpadding => "0", :cellspacing => "0", :height => "100%", :width => "100%"}
-  %tr
-    %td{:align => "center", :valign => "top"}
-      %table#emailContainer{:border => "0", :cellpadding => "20", :cellspacing => "0", :width => "600"}
-        %tr
-          %td{:align => "center", :valign => "top"}
-            %table#emailHeader{:border => "0", :cellpadding => "20", :cellspacing => "0", :width => "100%"}
-              %tr
-                %td{:align => "left", :valign => "top"}
-                  = image_tag attachments['logo_text.svg'].url, :width => "100px"
-        %tr
-          %td{:align => "center", :valign => "top"}
-            %table#emailBody{:border => "0", :cellpadding => "20", :cellspacing => "0", :width => "100%"}
-              %tr
-                %td{:align => "center", :valign => "top"}
-                  %p Thanks for your order!
-                  %p Here's what's on it's way..
-        %tr
-          %td{:align => "center", :valign => "top"}
-            %table#emailProducts{:border => "0", :cellpadding => "20", :cellspacing => "0", :width => "800"}
-              %tr
-                - @products.map do |p|
-                  .products
-                    %td{:align => "center", :valign => "top"}
-                      = image_tag(p.image_url, width: "180px")
-                      %p= p.title
-                      %p= number_to_currency(p.price / 100)
-        %tr
-          %td{:align => "center", :valign => "top"}
-            %table#emailFooter{:border => "0", :cellpadding => "20", :cellspacing => "0", :width => "100%"}
-              %tr
-                %td{:align => "right", :valign => "top"}
-                  %p &copy; Kevin Attfield Photography
+
+%table{align: 'center', cellpadding: '0', cellspacing: '0', width: '600', border: '0'}
+  %thead
+    %tr{bgcolor: '#ADABAB'}
+      %td= image_tag attachments['Logo_transparent.png'].url, width: '120'
+  %tbody
+    %tr
+      %td
+        %p Thanks for your order! Here's what's on it's way..
+    - @products.map do |p|
+      %tr{align: 'center'}
+        %td
+          %p
+            = p.title
+            = number_to_currency(p.price / 100)
+    %tr{align: 'right', bgcolor: '#ADABAB'}
+      %td
+        %p &copy; Kevin Attfield Photography
