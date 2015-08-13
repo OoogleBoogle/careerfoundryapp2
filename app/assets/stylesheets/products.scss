@@ -15,8 +15,8 @@
 	top: 0;
 	text-align: center;
 	width: 23%;
-	color: black;
-	background-color: white;
+	color: white;
+	background-color: black;
 	z-index: 100;
 	border-radius: 0 0 29px 0;
 	font: {
@@ -34,12 +34,6 @@
 	width: 40%;
 	border-radius: 0 0 0 29px;
 }
-.show-img {
-
-}
-.show-details {
-
-}
 #search-bar {
 	float: none;
 	margin: auto;
@@ -50,4 +44,12 @@
 	background-color: yellowgreen;
     color: black;
     border-color: lightgray;
+}
+.add-to-order-btn {
+	background-color: #EAA82E;
+	color: black;
+	padding: 10px;
+	&:visited {
+		color: black;
+	}
 }

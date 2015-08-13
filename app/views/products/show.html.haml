@@ -5,10 +5,12 @@
     %h4= @product.title
     %p= @product.description
     %p= "#{number_to_currency(@product.price / 100)}"
-    = link_to "Add to Order", product_orders_path(@product), method: :post
+    %div
+      = link_to "Add to Order", product_orders_path(@product), method: :post, class: 'add-to-order-btn'
     %br
-    = link_to 'Edit', edit_product_path(@product)
-    |
+    -if current_user.admin?
+      = link_to 'Edit', edit_product_path(@product)
+      |
     = link_to 'Back', products_path
   .comment-container.small-6.columns
     = render(:partial => "new_comment")

@@ -1,20 +1,35 @@
 - provide(:title, "My Orders | ")
-%h1 Hi #{@user.first_name}
-- if @orders.empty?
-  %h3 You have no outstanding orders.
-- else
-  %h4 Here's your current outstanding orders
-  %p 
-    You currently have #{@orders.length} oustanding purchase#{"s" if @orders.length > 1} which totals
-    = number_to_currency(@total / 100)
-  .payment-button
-    = form_for '/charges/create' do
-      = render(:partial => "shared/stripe_checkout_button")
+.order-container
+  %h1 Hi #{@user.first_name}
+  - if @orders.empty?
+    %h3 You have no outstanding orders.
+  - else
+    %h4 Here's your current outstanding orders
+    %p 
+      You currently have #{@orders.length} oustanding purchase#{"s" if @orders.length > 1} that total
+      = number_to_currency(@total / 100)
+    .payment-button
+      = form_for '/charges/create' do
+        = render(:partial => "shared/stripe_checkout_button")
 
-  .row.order-row
-    - @orders.each do |order|
-      .order-item.small-6.medium-3.columns
-        = image_tag(order.product.image_url)
-        %h4= order.product.title
-        %p.order-price= "#{number_to_currency(order.product.price / 100)}"
-        %p= link_to "Remove", user_order_path(order.user_id, order), method: :delete
+    .row.order-row
+      - @orders.each do |order|
+        - case @orders.length
+          - when 1..2
+            .order-item.small-6.columns
+              = image_tag(order.product.image_url)
+              %h4= order.product.title
+              %p.order-price= "#{number_to_currency(order.product.price / 100)}"
+              %p= link_to "Remove", user_order_path(order.user_id, order), method: :delete
+          - when 3
+            .order-item.small-6.medium-4.columns
+              = image_tag(order.product.image_url)
+              %h4= order.product.title
+              %p.order-price= "#{number_to_currency(order.product.price / 100)}"
+              %p= link_to "Remove", user_order_path(order.user_id, order), method: :delete
+          - else
+            .order-item.small-6.medium-3.columns
+              = image_tag(order.product.image_url)
+              %h4= order.product.title
+              %p.order-price= "#{number_to_currency(order.product.price / 100)}"
+              %p= link_to "Remove", user_order_path(order.user_id, order), method: :delete

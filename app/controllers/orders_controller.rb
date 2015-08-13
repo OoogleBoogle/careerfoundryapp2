@@ -32,7 +32,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to products_path, notice: 'Order was successfully created.' }
+        format.html { redirect_to products_path, notice: 'Saved to Cart'}
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
@@ -60,7 +60,7 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to user_orders_path(current_user), notice: 'Order was successfully destroyed.' }
+      format.html { redirect_to user_orders_path(current_user), notice: 'Removed from Cart' }
       format.json { head :no_content }
     end
   end
