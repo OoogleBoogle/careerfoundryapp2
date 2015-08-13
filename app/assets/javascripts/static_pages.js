@@ -1,21 +1,18 @@
 // # Place all the behaviors and hooks related to the matching controller here.
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
-// $(document).ready(function() {
-// 	$('.slider').slick({
-// 		arrows: false
-// 	});
-// });
 
 var slick = function() {
 	$('.slider').slick({
 		arrows: false,
-		fade: true
+		fade: true,
+		pauseOnHover: false
 	});
 };
 
-$(document).on('page:change', function() {
-	$('<img src="/images/logo_text.svg">').appendTo($('.caption-1'))
-	$("<h1>Visit the store.. prints... something</h1>").appendTo($('.caption-2'))
+$(document).on('page:update', function() {
 	slick()	
+	$('<img src="/images/logo_text.svg">').appendTo($('.caption-1').delay(800).animate({ opacity: 1, left: '10%' }));
+	$('<a href="/products">Visit the store...</a>').appendTo($('.hero-button-1').delay(1100).animate({opacity: 1, top: '59%'}));
+	$("<h1>Visit the store.. prints... something</h1>").appendTo($('.caption-2'));
 });
