@@ -13,5 +13,4 @@ var masonry = function() {
 
 $(document).on('page:change', function () {
 	masonry();
-	// $('.search-box').attr("placeholder", "&#x26;")
 });
