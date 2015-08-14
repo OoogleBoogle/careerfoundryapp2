@@ -1,0 +1,38 @@
+
++BRAKEMAN REPORT+
+
+Application path: /home/simon/projects/career-foundry-app4
+Rails version: 4.2.3
+Brakeman version: 3.0.5
+Started at 2015-08-14 14:11:59 -0700
+Duration: 1.595669393 seconds
+Checks run: BasicAuth, ContentTag, CreateWith, CrossSiteScripting, DefaultRoutes, Deserialize, DetailedExceptions, DigestDoS, EscapeFunction, Evaluation, Execute, FileAccess, FileDisclosure, FilterSkipping, ForgerySetting, HeaderDoS, I18nXSS, JRubyXML, JSONEncoding, JSONParsing, LinkTo, LinkToHref, MailTo, MassAssignment, ModelAttrAccessible, ModelAttributes, ModelSerialize, NestedAttributes, NumberToCurrency, QuoteTableName, Redirect, RegexDoS, Render, RenderDoS, RenderInline, ResponseSplitting, SQL, SQLCVEs, SSLVerify, SafeBufferManipulation, SanitizeMethods, SelectTag, SelectVulnerability, Send, SendFile, SessionSettings, SimpleFormat, SingleQuotes, SkipBeforeFilter, StripTags, SymbolDoSCVE, TranslateBug, UnsafeReflection, ValidationRegex, WithoutProtection, XMLDoS, YAMLParsing
+
+
++SUMMARY+
+
++-------------------+-------+
+| Scanned/Reported  | Total |
++-------------------+-------+
+| Controllers       | 13    |
+| Models            | 9     |
+| Templates         | 39    |
+| Errors            | 0     |
+| Security Warnings | 1 (1) |
++-------------------+-------+
+
++-----------------------+-------+
+| Warning Type          | Total |
++-----------------------+-------+
+| Remote Code Execution | 1     |
++-----------------------+-------+
+
+
++SECURITY WARNINGS+
+
++------------+-----------------+--------+-----------------------+----------------------------------------------------------------------------------->>
+| Confidence | Class           | Method | Warning Type          | Message                                                                           >>
++------------+-----------------+--------+-----------------------+----------------------------------------------------------------------------------->>
+| High       | RaterController | create | Remote Code Execution | Unsafe reflection method safe_constantize called with parameter value near line 5:>>
++------------+-----------------+--------+-----------------------+----------------------------------------------------------------------------------->>
+
