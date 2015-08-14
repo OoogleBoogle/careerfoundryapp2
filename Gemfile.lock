@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/ambethia/recaptcha.git
+  revision: f4450fb4088e172651cc4d5080edb42cc4af4e3f
+  specs:
+    recaptcha (0.4.0)
+
+GIT
   remote: https://github.com/stripe/stripe-ruby
   revision: ea3a79066965e1d94a6f5821f9acc8b792b13fd9
   specs:
@@ -321,6 +327,7 @@ DEPENDENCIES
   rails (= 4.2.3)
   rails_12factor
   ratyrate
+  recaptcha!
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
