@@ -6,6 +6,8 @@
 			= f.label :email
 			%br/
 			= f.email_field :email, autofocus: true
+		.field
+			= recaptcha_tags
 		.actions
 			= f.submit "Send me reset password instructions"
 		= render "devise/shared/links"

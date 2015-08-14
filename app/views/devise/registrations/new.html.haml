@@ -27,6 +27,8 @@
         = f.label :password_confirmation
         /
         = f.password_field :password_confirmation, autocomplete: "off"
+      .field
+        = recaptcha_tags
       .actions
         = f.submit "Sign up"
     = render "devise/shared/links"

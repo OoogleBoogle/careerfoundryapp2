@@ -14,12 +14,12 @@
       .field
         = f.label :email
         %br/
-        = f.email_field :email, autofocus: true
+        = f.email_field :email
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?
         %div
           Currently waiting confirmation for: #{resource.unconfirmed_email}
       .field
-        = f.label :password
+        = f.label :password, autocomplete: "off"
         %i (leave blank if you don't want to change it)
         %br/
         = f.password_field :password, autocomplete: "off"
@@ -32,6 +32,8 @@
         %i (we need your current password to confirm your changes)
         %br/
         = f.password_field :current_password, autocomplete: "off"
+      .field
+        = recaptcha_tags    
       .actions
         = f.submit "Update"
     %h3 Cancel my account

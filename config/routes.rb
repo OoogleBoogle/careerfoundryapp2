@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   post '/rate' => 'rater#create', :as => 'rate'
   # resources :orders, except: :index
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'registrations/registrations', passwords: 'registrations/passwords' }
   resources :users do
     resources :orders, except: :create
   end
