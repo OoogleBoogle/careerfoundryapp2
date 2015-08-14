@@ -6,6 +6,8 @@
 			= f.label :email
 			%br/
 			= f.email_field :email, autofocus: true
+		.field
+			.g-recaptcha{"data-sitekey" => "6Lf4QAsTAAAAAN1s1qeTZGiNHKHcKnAp26SnaZrA"}
 		.actions
 			= f.submit "Send me reset password instructions"
 		= render "devise/shared/links"

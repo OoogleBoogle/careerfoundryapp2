@@ -25,6 +25,17 @@ ul.right {
 		background-color: darken(#6495ED, 5%);
 	}
 }
+.top-bar.expanded {
+	.toggle-topbar a span{
+		color: white;
+		&:after {
+			box-shadow: 0 0 0 1px white, 0 7px 0 1px white, 0 14px 0 1px white;
+		}
+	}
+	.title-area {
+		background-color: darken(#6495ED, 7%);
+	}
+}
 #notice {
   margin: 0;
   line-height: 2.825rem;

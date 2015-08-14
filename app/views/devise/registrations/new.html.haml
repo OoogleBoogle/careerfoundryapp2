@@ -29,4 +29,6 @@
         = f.password_field :password_confirmation, autocomplete: "off"
       .actions
         = f.submit "Sign up"
+      .field
+        .g-recaptcha{"data-sitekey" => "6Lf4QAsTAAAAAN1s1qeTZGiNHKHcKnAp26SnaZrA"}
     = render "devise/shared/links"
