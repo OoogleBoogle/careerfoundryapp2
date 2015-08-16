@@ -2,20 +2,19 @@
   %nav.top-bar{:data => {:topbar => "", :options => "is_hover: false"}}
     %ul.title-area
       %li.name
-        = link_to image_tag("/images/logo_text.svg"), root_path
+        %p Kevin Attfield Photography
       %li.toggle-topbar.menu-icon
         %a{:href => "#"}
           %span Menu
     %section.top-bar-section
       / Left Nav Section
       %ul.left
-        %li{:class => ('active' if current_page?(root_path))}= link_to "Home", root_path
-        %li{:class => ('active' if current_page?(products_path))}= link_to 'Store', products_path
-        %li{:class => ('active' if current_page?(static_pages_contact_path))}= link_to "Contact", static_pages_contact_path
       / Right Nav Section
       %ul.right
         %li
           %p#notice= notice
+        %li{:class => ('active' if current_page?(root_path))}= link_to "Home", root_path
+        %li{:class => ('active' if current_page?(products_path))}= link_to 'Store', products_path
         - if user_signed_in?
           %li.cart{:class => ('active' if current_page?(user_orders_path(current_user)))}
             = link_to '', user_orders_path(current_user)
@@ -26,6 +25,7 @@
             = link_to "#{current_user.full_name}"
             %ul.dropdown
               -# %li= link_to 'My Orders', user_orders_path(current_user)
+              %li{:class => ('active' if current_page?(static_pages_contact_path))}= link_to "Contact", static_pages_contact_path
               %li= link_to 'Edit My Account', edit_user_registration_path
               %li= link_to 'Log Out', destroy_user_session_path, method: :delete
         - else

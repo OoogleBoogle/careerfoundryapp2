@@ -1,9 +1,10 @@
 .top-bar {
-	background-color: cornflowerblue;
-	box-shadow: 0 0 15px;
-}
-.sticky {
+	background-color: rgba(0,0,0,0.2);
 	z-index: 1000;
+	// box-shadow: 0 0 15px;
+}
+.top-bar-section ul li {
+	background-color: transparent;
 }
 ul.right {
 	@media (min-width: 800px) {
@@ -15,14 +16,17 @@ ul.right {
 		margin:	0 7px;
 	}
 	a {
-		background-color: cornflowerblue;
+		// background-color: cornflowerblue;
 	}
 }
+.top-bar-section li.active:not(.has-form) a:not(.button) {
+	background-color: #262626
+}
 .top-bar-section li:not(.has-form) a:not(.button) {
-	background-color: #6495ED;
+	background-color: transparent;
 	transition: 500ms;
 	&:hover {
-		background-color: darken(#6495ED, 5%);
+		background-color: darken(#262626, 5%);
 	}
 }
 .top-bar.expanded {
@@ -45,12 +49,9 @@ ul.right {
     margin-top: 14px;
 }
 .name {
-	width: 100px;
+	color: white;
 	margin-left: 10px!important;
 	transition: 500ms;
-	&:hover {
-		background-color: darken(#6495ED, 5%);
-	}
 }
 .cart {
 	position: relative;

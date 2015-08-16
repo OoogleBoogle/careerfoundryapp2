@@ -75,3 +75,42 @@
   margin-left: 40%;
   margin-top: 150px;
 }
+
+
+.index-container {
+  max-width: none;
+  margin: 0;
+  div {
+    padding:0;
+    margin-top: -50px;
+    height: 102vh;
+  }
+  .show-for-landscape {
+    background-image: url(../images/Jetty-carousel.jpg);
+    background-size: cover;
+    background-position-x: -52px;
+    background-repeat: no-repeat;
+    @media (min-width: 880px) {
+      background-position-x: 0;
+    }
+  }
+  .show-for-portrait {
+    background-image: url(../images/california-street.jpg);
+    background-position-x: -132px;
+    background-repeat: no-repeat;
+  }
+}
+.index-text {
+  max-width: none;
+  margin: 0;
+  position: absolute;
+  top: 20%;
+  text-align: center;
+  h1, h4 {
+    color: floralwhite;
+    text-shadow: 0 0 4px black
+  }
+  .title-box {
+    border: 2px solid white;
+  }
+}
