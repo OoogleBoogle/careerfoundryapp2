@@ -2,11 +2,11 @@
 
 $(document).on('page:change', function() {
 	$('.rating').raty({
-		path: '/assets',
+		path: '/raty_images',
 		scoreName: 'comment[rating]'
 	});
 	$('.rated').raty({
-		path: '/assets',
+		path: '/raty_images',
 		readOnly: true,
 		score: function() {
 			return $(this).attr('data-score');
