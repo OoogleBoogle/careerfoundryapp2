@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="391" height="170" viewBox="0 0 391 170">
+  <symbol id="a" viewBox="-194 -81.387 389.889 162.775">
+    <path class="arc" d="M-101.3-28.7c-33-35.8-70.8-54.8-84-42.4-13.4 12 2.6 51 35.8 87 33 35 70.7 54 84 42 1.8-2 3-4 3.8-6 .7 11-2.3 20-8.7 25-18.2 14-58.6-10-90.4-53s-42.6-89-24.4-102c18.2-13 58.7 10 90.4 53 5 7 9.3 13 13.2 20-5.6-8-12.2-16-19.7-24z"/>
+    <path class="blob" d="M-125-7c12.7-11.8 9.4-36-7.4-54-16.8-17.7-40.7-22.5-53.4-10.5-12.7 12-9.4 36 7.3 54C-161.7.3-137.7 5-125-7z"/>
+    <text class="text-name" transform="matrix(1 0 0 -1 -97.706 5.447)" font-family="'Verdana'" font-size="43.6">
+      Kevin Attfield
+    </text>
+    <text class="text-photo" transform="matrix(1 0 0 -1 -61.624 -27.015)" font-family="'Verdana'" font-size="33.1">
+      Photography
+    </text>
+  </symbol>
+  <g opacity=".4" fill="#660">
+    <path class="outer-shadow" d="M96.7 115.7c-33 35.8-70.8 54.8-84 42.4-13.5-12 2.5-51 35.7-87 33-35 70.7-54 84-42 1.8 2 3 4 3.8 6 .6-11-2.2-20-8.7-25-18-14-58.5 10-90.3 53s-42.6 89-24.4 102c18.2 14 58.7-10 90.4-53 5-7 9.3-13 13.2-20-5.6 8-12.2 16-19.7 24z"/>
+    <ellipse transform="matrix(.685 -.729 .729 .685 -78.522 70.765)" cx="42.6" cy="126.2" rx="44.4" ry="31.6"/>
+  </g>
+  <use xlink:href="#a" width="389.9" height="162.8" x="-194" y="-81.4" transform="matrix(1 0 0 -1 196 84)" overflow="visible"/>
+</svg>
