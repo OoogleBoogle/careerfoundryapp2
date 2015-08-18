@@ -66,6 +66,13 @@ class OrdersController < ApplicationController
     end
   end
 
+  def destroy_all
+    @orders = current_user.orders
+    @orders.destroy_all
+    flash[:notice] = 'All items deleted'
+    redirect_to user_orders_path(current_user)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order

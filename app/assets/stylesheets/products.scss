@@ -54,3 +54,15 @@
 		color: black;
 	}
 }
+.pagination {
+	.current {
+		background-color: transparent;
+		color: white;
+		padding: 2.4px;
+		border: 1px solid white;
+		border-radius: 70%;
+	}
+	.disabled {
+		color: #7B7B7B;
+	}
+}

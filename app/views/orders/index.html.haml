@@ -8,6 +8,8 @@
     %p 
       You currently have #{@orders.length} oustanding purchase#{"s" if @orders.length > 1} that total
       = number_to_currency(@total / 100)
+    .delete-button
+      = link_to 'Delete All', orders_destroy_all_path
     .payment-button
       = form_for '/charges/create' do
         = render(:partial => "shared/stripe_checkout_button")

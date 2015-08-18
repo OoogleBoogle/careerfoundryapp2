@@ -18,9 +18,9 @@
         - if user_signed_in?
           %li.cart{:class => ('active' if current_page?(user_orders_path(current_user)))}
             = link_to '', user_orders_path(current_user)
-            - if current_user.orders.length > 0
-              .order-i
-                %p= current_user.orders.length
+            -# - if current_user.orders.length > 0
+            .order-i
+              %p= current_user.orders.length
           %li.has-dropdown
             = link_to "#{current_user.full_name}"
             %ul.dropdown

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :orders, only: :create
     resources :comments
   end
-  resources :charges
+  get 'orders/destroy_all'
   get 'static_pages/index'
   get 'static_pages/contact'
   post 'users/:id/orders', to: 'static_pages#payment_received'
