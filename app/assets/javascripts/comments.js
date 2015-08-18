@@ -1,6 +1,6 @@
 
 
-$(document).on('page:change', function() {
+$(document).on('page:update', function() {
 	$('.rating').raty({
 		path: '/raty_images',
 		scoreName: 'comment[rating]'

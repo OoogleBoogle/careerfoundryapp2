@@ -1,3 +1,4 @@
+= will_paginate @comments
 - @comments.each do |comment|
 	.row
 		%hr
@@ -9,4 +10,4 @@
 		.rated{:data => {:score => comment.rating}}
 		%p= comment.body
 		- if signed_in? && current_user.admin?
-			= link_to ('Delete Comment'), product_comment_path(@product, comment), method: :delete, data: { confirm: "Are you sure?"}
+			= link_to ('Delete Comment'), product_comment_path(@product, comment), method: :delete, data: { confirm: "Are you sure?" }
