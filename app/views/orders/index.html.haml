@@ -8,12 +8,9 @@
     %p 
       You currently have #{@orders.length} oustanding purchase#{"s" if @orders.length > 1} that total
       = number_to_currency(@total / 100)
-    .delete-button
-      = link_to 'Delete All', orders_destroy_all_path
     .payment-button
       = form_for '/charges/create' do
         = render(:partial => "shared/stripe_checkout_button")
-
     .row.order-row
       - @orders.each do |order|
         - case @orders.length
@@ -35,3 +32,5 @@
               %h4= order.product.title
               %p.order-price= "#{number_to_currency(order.product.price / 100)}"
               %p= link_to "Remove", user_order_path(order.user_id, order), method: :delete
+    .delete-button
+      = link_to 'Delete All', orders_destroy_all_path, class: 'button alert', data: { confirm: 'Are you sure?' }
