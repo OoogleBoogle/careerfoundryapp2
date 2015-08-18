@@ -33,6 +33,7 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if @order.save
         format.html { redirect_to products_path, notice: 'Saved to Cart'}
+        format.js {}
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
