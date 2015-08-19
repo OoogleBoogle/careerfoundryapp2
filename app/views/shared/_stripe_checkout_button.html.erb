@@ -1,8 +1,10 @@
 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-name="Kevin Attfield Photography"
-          data-image='../../images/Logo_transparent.png'
+          data-image="../../images/Logo_transparent.png"
           data-description="Your order details"
           data-email="<%= @user.email %>"
           data-label="Checkout"
-          data-amount="<%= @total %>"></script>
+          data-amount="<%= @total %>"
+          data-billingAddress="true"
+          data-shippingAddress="true"> </script>
