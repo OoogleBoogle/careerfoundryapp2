@@ -17,7 +17,6 @@ class StaticPagesController < ApplicationController
 		@products = @orders.map do |order|
 			Product.find(order.product_id)
 		end
-		byebug
 		UserMailer.purchase_mail(@products, current_user).deliver_later
 		@orders.destroy_all
 	end
