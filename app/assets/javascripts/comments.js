@@ -1,5 +1,3 @@
-
-
 $(document).on('page:update', function() {
 	$('.rating').raty({
 		path: '/raty_images',

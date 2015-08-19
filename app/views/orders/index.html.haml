@@ -11,26 +11,6 @@
     .payment-button
       = form_for '/charges/create' do
         = render(:partial => "shared/stripe_checkout_button")
-    .row.order-row
-      - @orders.each do |order|
-        - case @orders.length
-          - when 1..2
-            .order-item.small-6.columns
-              = image_tag(order.product.image_url)
-              %h4= order.product.title
-              %p.order-price= "#{number_to_currency(order.product.price / 100)}"
-              %p= link_to "Remove", user_order_path(order.user_id, order), method: :delete
-          - when 3
-            .order-item.small-6.medium-4.columns
-              = image_tag(order.product.image_url)
-              %h4= order.product.title
-              %p.order-price= "#{number_to_currency(order.product.price / 100)}"
-              %p= link_to "Remove", user_order_path(order.user_id, order), method: :delete
-          - else
-            .order-item.small-6.medium-3.columns
-              = image_tag(order.product.image_url)
-              %h4= order.product.title
-              %p.order-price= "#{number_to_currency(order.product.price / 100)}"
-              %p= link_to "Remove", user_order_path(order.user_id, order), method: :delete
+    = render 'show_orders'
     .delete-button
       = link_to 'Delete All', orders_destroy_all_path, class: 'button alert', data: { confirm: 'Are you sure?' }
