@@ -1,6 +1,7 @@
 - provide(:title, "Store | ")
 .product-container
 	= render(:partial => "search")
-	.grid
-		.grid-sizer
-			= render @products
+	- cache('all_products') do
+		.grid
+			.grid-sizer
+				= render @products
