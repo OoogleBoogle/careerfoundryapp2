@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
       @products = Product.where("title ILIKE ? OR description ILIKE ?", "%#{search_term}%", "%#{search_term}%")
     else
       @products = Product.all_cached
+      @stats = Rails.cache.stats
     end
   end
 

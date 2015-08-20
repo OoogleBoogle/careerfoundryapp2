@@ -1,5 +1,16 @@
 - provide(:title, "Store | ")
 
+%p
+	Cache hits:
+	= @stats['get_hits']
+%br
+%p
+	Cache misses:
+	= @stats['get_misses']
+%br
+	Cache flushes:
+	= @stats['cmd_flush']
+
 .product-container
 	= render(:partial => "search")
 	.grid
