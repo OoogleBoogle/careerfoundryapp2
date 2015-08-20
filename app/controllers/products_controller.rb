@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
       search_term = params[:q]
       @products = Product.where("title ILIKE ? OR description ILIKE ?", "%#{search_term}%", "%#{search_term}%")
     else
-      @products = Product.all_cached
+      @products = Product.all
     end
   end
 
