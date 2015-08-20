@@ -75,3 +75,4 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem "recaptcha", require: "recaptcha/rails", github: "ambethia/recaptcha"
 gem 'dalli'
 gem 'memcachier'
+gem 'newrelic_rpm'
