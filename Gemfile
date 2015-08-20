@@ -73,3 +73,5 @@ gem 'jquery-turbolinks'
 gem 'foundation-icons-sass-rails'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem "recaptcha", require: "recaptcha/rails", github: "ambethia/recaptcha"
+gem 'dalli'
+gem 'memcachier'
