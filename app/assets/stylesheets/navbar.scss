@@ -1,10 +1,11 @@
 .top-bar {
-	background-color: rgba(0,0,0,0.2);
+	background-color: rgba(0,0,0,0.8);
 	z-index: 1000;
 	// box-shadow: 0 0 15px;
 }
 .top-bar-section ul li {
-	background-color: #404040;
+	background-color: rgba(64,64,64,0.8);
+	z-index: 1000;
 }
 ul.right {
 	@media (min-width: 800px) {
