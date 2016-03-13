@@ -26,9 +26,9 @@
   }
   .show-for-landscape {
     background-image: url(../images/Jetty-carousel.jpg);
-    background-size: cover;
+    background-size: 100vw;
     position: absolute;
-    background-position-x: -42px;
+    // background-position-x: -42px;
     background-repeat: no-repeat;
     @media (min-width: 880px) {
       background-position-x: 0;
