@@ -17,3 +17,5 @@
 /tmp
 
 /brakeman.txt
+# Ignore application configuration
+/config/application.yml

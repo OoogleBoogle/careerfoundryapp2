@@ -77,3 +77,4 @@ gem "recaptcha", require: "recaptcha/rails", github: "ambethia/recaptcha"
 gem 'dalli'
 gem 'memcachier'
 gem 'newrelic_rpm'
+gem 'figaro'
